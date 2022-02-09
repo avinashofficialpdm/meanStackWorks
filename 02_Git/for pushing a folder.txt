@@ -1,0 +1,17 @@
+git init
+initialized git in that folder
+
+git status
+here we can see the status of the folder
+
+git add -A
+adding all files to staging area
+
+git commit -m "full folder commiting first time"
+commiting to local repository
+
+then we want to create a new repository in github account and copy the path of that repository and
+git remote add mearn https://github.com/avinashofficialpdm/meanStackWorks.git
+
+git push -u mearn master - mearn is just a name. -u is only using first time in pushing to that repository
+

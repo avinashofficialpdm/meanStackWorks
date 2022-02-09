@@ -1,0 +1,14 @@
+git status
+then we can know the edits we done
+
+git add -A
+adding the edited file/All file
+
+git commit -m "modified message"
+
+then we want to know the name in github. 
+git remote -v
+then we knows the name 
+
+then git push name
+ 

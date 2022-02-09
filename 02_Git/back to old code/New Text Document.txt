@@ -1,0 +1,9 @@
+git log 
+here we can see all the commits and commit id we did.
+
+git checkout that id
+example:git checkout 9ece9588313050da70a5e7b205e9b6f0ec0e8dcf
+now we moved back to the code
+
+again we want to move back to old code 
+git checkout master
