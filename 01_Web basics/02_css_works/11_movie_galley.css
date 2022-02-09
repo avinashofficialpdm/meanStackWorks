@@ -1,0 +1,32 @@
+div{
+    width: 18%;
+    height: 100%;
+    background-color: black;
+    /* margin: 2px; */
+    float: left;
+}
+img{
+    width: 90%;
+    height: 200px;
+}
+h3{
+    color: blanchedalmond;
+}
+p{
+    font-size: small;
+    color: blanchedalmond;
+    padding: 1%;
+}
+button{
+    margin-left: 10%;
+    width: 70%;
+    background-color: darkgoldenrod;
+    color: rgb(0, 0, 0);
+    border: blanchedalmond 2px solid;
+}
+h5{
+    color: blanchedalmond;
+}
+body{
+    background-color: black;
+}

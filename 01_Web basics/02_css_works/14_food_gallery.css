@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&family=Shizuru&family=Vujahday+Script&display=swap');
+.parent{
+    
+    background-color: black;
+    width: 100%;
+    height: 450px;
+    /* background-color: cadetblue; */
+    display: flex;
+    justify-content: space-around;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    /* justify-content: space-between; */
+    /* background-image: url(https://www.freepik.com/free-photo/top-view-food-frame-with-copy-space_10753118.htm); */
+}
+#head{
+    font-family: 'Vujahday Script', cursive;
+}
+
+body{
+    /* font-family: 'Vujahday Script', cursive; */
+    text-align: center;
+    color: rgb(82, 236, 51);
+    background-color: rgb(0, 0, 0);
+}
+.first_row{
+    padding-top: 30px;
+}
+img{
+    width: 90%;
+    height:150px;
+    border-radius: 4px;
+}
+button{
+    border: crimson 2px solid;
+    border-radius: 6px;
+    /* margin-left: 15%; */
+    width: 95%;
+    height: 7%;
+    background-color: rgb(0, 0, 0);
+    color: cornsilk;
+}
+.col{
+    height: 450px;
+    width: 25%;
+    border: black 2px solid;
+    background-color: blueviolet;
+}
+.col-1{
+    font-family: 'Moon Dance', cursive;
+    color: blanchedalmond;
+    background-color: rgb(0, 0, 0);
+}
+.col-2{
+    font-family: 'Moon Dance', cursive;
+    color: blanchedalmond;
+    background-color: rgb(0, 0, 0);
+}
+.col-3{
+    font-family: 'Moon Dance', cursive;
+    color: blanchedalmond;
+    background-color: rgb(0, 0, 0);
+}
+.col-4{
+    font-family: 'Moon Dance', cursive;
+    color: blanchedalmond;
+    background-color: rgb(0, 0, 0);
+}

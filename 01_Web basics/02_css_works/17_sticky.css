@@ -1,0 +1,11 @@
+.stick{
+    background-color: darkcyan;
+    position: sticky;
+    top: 0;
+}
+/* postion properties
+default= static
+relative absolute
+fixed
+sticky
+*/

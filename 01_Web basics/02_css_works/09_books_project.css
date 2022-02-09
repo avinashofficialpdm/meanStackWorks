@@ -1,0 +1,17 @@
+div{
+    width: 23%;
+    float: left;
+    height: 100%;
+    background-color: darkgray;
+    border: rgb(39, 29, 49) 2px solid;
+    margin: 2px;
+
+}
+h4{
+    text-align: center;
+}
+img{
+    width: 100%;
+    height: 200px;
+    border-radius: 4px;
+}

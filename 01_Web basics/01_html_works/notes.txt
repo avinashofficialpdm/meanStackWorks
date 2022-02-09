@@ -1,0 +1,13 @@
+
+			
+
+	structure of html
+	semantic tags
+	header,footer,aside,main
+	h1 to h6
+	strong tag
+	formatting a document - shift+alt+f or rightclick & format doc
+	lorem content - 
+	auto rename extention installation
+	live server - Extention
+	htmltagwrap - Extention for wrap up a dummy content with a tag (default tag is p tag. We 			can change that )

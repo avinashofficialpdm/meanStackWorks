@@ -1,0 +1,19 @@
+p{
+    color: blue;
+    
+}
+div{
+    height: 300px;
+    width: 60%;
+    background-color: rgb(10, 185, 39);
+    /* padding: 100px; */
+    /* padding-left: 100px; */
+    /* padding: 20%; */
+}
+/* descendant selector */
+div p{
+    color: chocolate;
+}
+h1{
+    text-align: center;
+}

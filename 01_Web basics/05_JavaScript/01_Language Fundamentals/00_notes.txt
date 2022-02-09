@@ -1,0 +1,1 @@
+variables are stored in memory heap in js engine
