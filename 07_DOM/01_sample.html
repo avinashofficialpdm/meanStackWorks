@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Document Object model</h1>
+    <h2>DOM</h2>
+
+    <!--document.getelementByTagName("h1") - it takes all the elements of h1. and creates a new objects. from there we can create
+    an array (using Array,from(objectName)   OR [...objectName]) for our works -->
+
+
+    <h2 id="first">Dom Using Id</h2>
+    <!-- here we are using getElementById("id") . it takes only one elemnt  -->
+
+
+    <ol>
+        <li class="list">First List item</li>
+        <li class="list">Second item</li>
+        <li>Third item</li>
+        <!-- here we want to changethe color of first two items. so we use class name
+        document.getElementsByClassName() -->
+    </ol>
+
+    <!-- document.queryselector(). using this we can take elements using tag,class,id anything
+    document.queryselector("h1") - tag
+    document.queryselector("#id") - id
+     document.queryselector(".cls") - class -->
+
+     <!-- document.queryselectorAll(). using this we can take elements using tag,class,id anything
+    document.queryselectorAll("h1") - tag
+    document.queryselectorAll("#id") - id
+     document.queryselectorAll(".cls") - class -->
+</body>
+</html>
