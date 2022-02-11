@@ -1,0 +1,7 @@
+create a ne folder
+
+and git bash here
+
+git clone https://github.com/avinashofficialpdm/web-caculator.git
+
+this link is took from code section in github
