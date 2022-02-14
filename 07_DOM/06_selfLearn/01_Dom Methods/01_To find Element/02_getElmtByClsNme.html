@@ -1,0 +1,23 @@
+<!-- Select collection elements with given classname -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="one">
+    <button onclick="btnClick()">Click me</button>
+</body>
+<script>
+    function btnClick(){
+        let textn= document.getElementsByClassName('one')[0].value
+        // here it comes a object of collection of elements because it tooks by class name.
+        // we want to take first element value in this case. thats why we use ()[0].value
+        alert(textn);
+    }
+</script>
+</html>
