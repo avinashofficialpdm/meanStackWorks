@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { TransactionComponent } from './transaction/transaction.component';
 
 const routes: Routes = [
   {
@@ -14,9 +13,6 @@ const routes: Routes = [
   },
   {
     path:'register',component:RegisterComponent
-  },
-  {
-    path:'transaction',component:TransactionComponent
   }
 ];
 
