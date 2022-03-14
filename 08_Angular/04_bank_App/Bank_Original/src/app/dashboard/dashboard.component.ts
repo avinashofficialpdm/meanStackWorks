@@ -86,7 +86,17 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  cancel(){
+    this.deleteAcno=""
+  }
   deleteAccount(){
     this.deleteAcno=JSON.parse(localStorage.getItem("currentAcno")  || '')
+  }
+  delete(event:any){
+    alert("Delete account "+event+" from parent")
+    localStorage.removeItem("currentAcno")
+    localStorage.removeItem("currentUname")
+    this.rout.navigateByUrl("")
+
   }
 }
