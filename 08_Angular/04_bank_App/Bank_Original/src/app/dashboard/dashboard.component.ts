@@ -1,13 +1,18 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
+
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
+
+
 export class DashboardComponent implements OnInit {
   amount=""
   acno=""
@@ -21,6 +26,8 @@ export class DashboardComponent implements OnInit {
   lDate:any
   deleteAcno:any
 
+  // creating an object of headers in options
+  
 
   withdrawForm=this.fb.group({
     amount:['',[Validators.required,Validators.pattern('[0-9]*')]],
@@ -58,16 +65,26 @@ export class DashboardComponent implements OnInit {
     let password=this.depositForm.value.password1
     let amount=this.depositForm.value.amount1
 
-    const result =this.ds.deposit(acno,password,amount) 
-    if(result){
-        alert(amount+" is Success fully added and new balance is "+result)
-    }else{
+    this.ds.deposit(acno,password,amount).subscribe((result:any)=>{
+      if(result){
+        alert(result.message)
+      }
+    },
+    (result)=>{
+      alert(result.error.message)
+    })
+    // if(result){
+    //     alert(amount+" is Success fully added and new balance is "+result)
+    // }else{
 
-    }
+    // }
 
   }
   constructor(private ds:DataService,private fb:FormBuilder,private rout:Router) {
-    this.user=this.ds.currentUname
+    if(localStorage.getItem("currentUname")){
+      this.user=JSON.parse(localStorage.getItem("currentUname") ||'')
+
+    }
 
     this.lDate=new Date()
    }

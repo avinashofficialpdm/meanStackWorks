@@ -1,5 +1,11 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+
+
+const options={
+  headers:new HttpHeaders()
+}
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +20,8 @@ export class DataService {
     1001: { acno: 1001, uname: "Vyom", password: 1001, balance: 5000,transaction:[]  },
     1002: { acno: 1002, uname: "Laisha", password: 1002, balance: 5000,transaction:[] }
   }
-  constructor() {
-    this.getData()
+  constructor(private http:HttpClient) {
+    // this.getData()
    }
 
 
@@ -43,68 +49,100 @@ export class DataService {
     }
   }
 
-  register(acno: any, uname: any, pass: any) {
-    let database = this.database
 
-    if (acno in database) {
+  getOptions(){
+    const token = JSON.parse(localStorage.getItem("token") || '')
 
-      // alert("Already exists")
-      return false
+    let headers = new HttpHeaders
+
+    if(token){
+     headers= headers.append("x-access-token",token)
+      options.headers=headers
     }
-     else {
-      database[acno] = {
-        acno,
-        uname,
-        password:pass,
-        balance: 0,
-        transaction:[]
-      }
-      this.setData()
-      return true
-      // this.rout.navigateByUrl("")
+    return options
+  }
+  register(acno: any, uname: any, password: any) {
+
+    const data={
+      acno,uname,password
     }
+
+    return this.http.post('http://localhost:3000/register',data)
+    // let database = this.database
+
+    // if (acno in database) {
+
+    //   // alert("Already exists")
+    //   return false
+    // }
+    //  else {
+    //   database[acno] = {
+    //     acno,
+    //     uname,
+    //     password:pass,
+    //     balance: 0,
+    //     transaction:[]
+    //   }
+    //   this.setData()
+    //   return true
+    //   // this.rout.navigateByUrl("")
+    // }
   }
 
   login(accno:any,passs:any){
-    if (accno in this.database) {
-      if (passs == this.database[accno]["password"]) {
-        this.currentAcno=accno
-        this.currentUname=this.database[accno].uname
-        this.setData()
-        return true
-      } else {
-        alert("Incorrect password")
-        return false
-      }
-    } else {
-      alert("Accound doesn't exist")
-      return false
+ 
+    const data={
+      accno,passs
     }
+    return this.http.post('http://localhost:3000/login',data)
+    // if (accno in this.database) {
+    //   if (passs == this.database[accno]["password"]) {
+    //     this.currentAcno=accno
+    //     this.currentUname=this.database[accno].uname
+    //     this.setData()
+    //     return true
+    //   } else {
+    //     alert("Incorrect password")
+    //     return false
+    //   }
+    // } else {
+    //   alert("Accound doesn't exist")
+    //   return false
+    // }
   }
 
-  deposit(acno:any,password:any,amount:any){
-    let amt=parseInt(amount)
-    let db=this.database
-    if(acno in db){
-      if(db[acno].password==password){
-        db[acno].balance+=amt
-        db[acno].transaction.push({
-          amount:amt,
-          type:"Deposit"
-        })
-        this.setData()
-        return db[acno].balance
-        // console.log();
-        
-        
-      }else{
-        alert("Password is incorrect")
-        return false
-      }
-    }else{
-      alert("User doesn't Exist")
-      return false
+  deposit(acno:any,password:any,amt:any){  
+    // req body
+    const data = {
+      acno,password,amt
     }
+
+    // deposite API
+    return this.http.post('http://localhost:3000/deposit',data,this.getOptions())
+
+
+    // let amt=parseInt(amount)
+    // let db=this.database
+    // if(acno in db){
+    //   if(db[acno].password==password){
+    //     db[acno].balance+=amt
+    //     db[acno].transaction.push({
+    //       amount:amt,
+    //       type:"Deposit"
+    //     })
+    //     this.setData()
+    //     return db[acno].balance
+    //     // console.log();
+        
+        
+    //   }else{
+    //     alert("Password is incorrect")
+    //     return false
+    //   }
+    // }else{
+    //   alert("User doesn't Exist")
+    //   return false
+    // }
   }
 
 

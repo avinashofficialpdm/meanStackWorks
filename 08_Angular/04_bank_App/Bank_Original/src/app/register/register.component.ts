@@ -29,17 +29,30 @@ export class RegisterComponent implements OnInit {
     var acno=this.RegisterForm.value.acno
     var uname=this.RegisterForm.value.uname
     var pass=this.RegisterForm.value.pswd
+    console.log(pass);
+    
     
     if(this.RegisterForm.valid){
-      const result=this.ds.register(acno,uname,pass)
+      this.ds.register(acno,uname,pass).subscribe(
+        (result:any)=>{
+        if(result){
+          alert(result.message)
+          this.rout.navigateByUrl("")
+        }
+      },
+      (result)=>{
+        alert(result.error.message)
+      }
+      
+      )
 
-      if(result){
-        alert("Added successfully")
-        this.rout.navigateByUrl("")
-      }
-      else{
-        alert("Already exist")
-      }
+      // if(result){
+      //   alert("Added successfully")
+        // this.rout.navigateByUrl("")
+      // }
+      // else{
+      //   alert("Already exist")
+      // }
     }else{
       alert("Invalid username")
     }

@@ -1,0 +1,8 @@
+first we push the folder normally in github then
+
+
+npm install -g angular-cli-ghpages
+
+ng build --prod --base-href "https://<githubUsername>.github.io/<repositoryName>/"
+
+ngh --dir dist/angular-quiz - this is the path of project  build  

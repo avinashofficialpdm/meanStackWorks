@@ -23,13 +23,26 @@ export class LoginComponent implements OnInit {
   login() {
     var accno = this.loginForm.value.acno
     var passs = this.loginForm.value.pswd
-    let database = this.ds.database
-    const data=this.ds.login(accno,passs)
+    if(this.loginForm.valid){
+      this.ds.login(accno,passs)
+      .subscribe((result:any)=>{
+        if(result){
+          console.log(result);
+          
+          localStorage.setItem("currentAcno",JSON.stringify(result.currentAcno))
+          localStorage.setItem("currentUname",JSON.stringify(result.currentUname))
+          localStorage.setItem("token",JSON.stringify(result.token))
+          alert("login successsssss")
+          this.rout.navigateByUrl("dashboard")
+        }
+      },
+      (result)=>{
+        alert(result.error.message)
+      })
+    }
     
 
-    if(data){
-      this.rout.navigateByUrl("dashboard")
-    }
+ 
 
 
   }

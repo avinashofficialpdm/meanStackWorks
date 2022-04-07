@@ -1,0 +1,21 @@
+			commands
+
+	to show dbs - 			-show dbs
+	for using a db -		-use db
+	sho show collections 		-show collections
+	show all the data in database	-db.collectionName.find()
+	to find a specific one		-db.collectionName.findOne({"acno":1000})
+	to insert a collection		-db.collectionName.insertOne(json data)
+	find with a acondition		-db.users.find({balance:{$gt:3000}}). there is so many examples in the documentation
+					-https://docs.mongodb.com/manual/reference/operator/query/
+
+	to update a specific one	-db.users.updateOne({uname:"Nivin"},{$set:{uname:"test"}})
+
+
+	when we try to update using db.users.updateOne({uname:"Nivin"},{$set:{uname:"test"}})- this command 
+	,but there is no an account of uname:Nivin. then we can insert and update that using
+
+					-db.users.updateOne({uname:"Nivin"},{$set:{uname:"test"}},{upsert:true})
+
+
+	delete with a condition		-db.users.deleteOne({acno:1006})
